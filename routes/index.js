@@ -81,6 +81,11 @@ router
 	.post('/get_file', indexController.getFile)
 	.post('/upload_file', indexController.uploadFile)
 	.get('/get_file_list', indexController.getFileList)
-	.delete('/delete_file', indexController.deleteFile)
+  .delete('/delete_file', indexController.deleteFile)
+  
+router.post('/sentFormData', (req, res, next) => {
+  console.log(req.body)
+  res.status(200).send('success')
+})
 
 module.exports = router;
