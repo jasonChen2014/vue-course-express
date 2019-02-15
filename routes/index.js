@@ -85,7 +85,12 @@ router
   
 router.post('/sentFormData', (req, res, next) => {
   console.log(req.body)
-  res.status(200).send('success')
+  //res.status(200).send('success')
+  if(req.body.username !== "haoxin") {
+    res.status(401).send({ "username":"username should be haoxin" })
+  }else{
+    res.status(200).send('success')
+  }
 })
 
 module.exports = router;
